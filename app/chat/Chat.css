@@ -1,0 +1,205 @@
+* {
+  box-sizing: border-box;
+}
+
+.vickybg {
+  background-image: sr;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  height: 100dvh;
+}
+
+
+.dropshadow {
+  box-shadow:
+    2.8px 2.8px 2.2px rgba(0, 0, 0, 0.104),
+    6.7px 6.7px 5.3px rgba(0, 0, 0, 0.149),
+    12.5px 12.5px 10px rgba(0, 0, 0, 0.185),
+    22.3px 22.3px 17.9px rgba(0, 0, 0, 0.221),
+    41.8px 41.8px 33.4px rgba(0, 0, 0, 0.266),
+    100px 100px 80px rgba(0, 0, 0, 0.37);
+
+}
+
+.customheight {
+  height: 120dvh;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  margin: 1rem;
+  white-space: pre-wrap; /* CSS3 */
+  white-space: -moz-pre-wrap; /* Firefox */
+  white-space: -pre-wrap; /* Opera <7 */
+  white-space: -o-pre-wrap; /* Opera 7 */
+  word-wrap: break-word; /* IE */
+}
+
+.lds-ripple {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid #fff;
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  margin-top: 1rem;
+  margin-left: .5rem;
+}
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+@keyframes lds-ripple {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  4.9% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  5% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
+  }
+}
+
+
+.message pre {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+.user-message {
+  background: rgb(65, 136, 201);
+  background: linear-gradient(90deg, rgba(62, 62, 62, 1) 0%, rgba(41, 41, 41, 1) 100%);
+  border-radius: 1rem;
+  align-self: flex-end;
+  margin-left: 85px;
+  padding: 1.5rem 1.5rem 0rem 1.5rem;
+  color: white;
+  box-shadow:
+    2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+    6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+    12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+    22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+    41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+    100px 100px 80px rgba(0, 0, 0, 0.07);
+    white-space: pre-wrap; /* CSS3 */
+    white-space: -moz-pre-wrap; /* Firefox */
+    white-space: -pre-wrap; /* Opera <7 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word; /* IE */
+}
+
+.user-message code {
+  color: #ffffff90;
+}
+.assistant-message code {
+  color: #ffffff90;
+}
+
+.assistant-message {
+  background: rgb(62, 62, 62);
+  background: linear-gradient(76deg, #3B9FEE 0%, #FF00FF  100%);
+  padding: 10px;
+  border-radius: 1rem;
+  color: white;
+
+  padding: 1.5rem 1.5rem .5rem 1.5rem;
+  align-self: flex-start;
+  margin-right: 85px;
+  box-shadow:
+    2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+    6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+    12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+    22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+    41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+    100px 100px 80px rgba(0, 0, 0, 0.07);
+}
+
+.scrollable-wrapper {
+  display: grid;
+  overflow: hidden;
+  min-height: 100%;
+  width: 100%;
+  align-content: start;
+
+}
+
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-up {
+  animation: slide-up 0.8s ease;
+}
+
+.content-wrapper {
+  padding-right: 8px;
+  /* width of scrollbar */
+}
+
+
+/* This will change the scrollbar for Chrome, Edge, and Safari */
+.scrollable-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollable-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollable-content::-webkit-scrollbar-thumb {
+  background: white;
+  max-height: 2rem;
+  border-radius: 1rem;
+}
+
+.scrollable-content::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* This will change the scrollbar for Firefox */
+.scrollable-content {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #5e5e5e;
+  overflow-y: overlay;
+
+}
+
+.height500 {
+  height: 600px;
+}
