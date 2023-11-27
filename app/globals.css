@@ -17,6 +17,10 @@
   font-style: normal;
 }
 
+.highZ {
+  z-index: 999;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -46,6 +50,7 @@ div {
   right: 0;
   transform: translateY(-100px);
   transition: all 1s ease-in-out;
+  z-index: 999;
 }
 .slide-in {
   transform: translateY(0px);

@@ -5,6 +5,7 @@ import { Comment } from "react-loader-spinner";
 
 import axios from "axios";
 import "../chat/Chat.css";
+import "../globals.css";
 
 
 
@@ -105,7 +106,7 @@ function Chat() {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer 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`,
+            Authorization: `Bearer ***`,
           },
           body: JSON.stringify(requestData),
           signal: controller.signal, // add this line
@@ -158,12 +159,11 @@ function Chat() {
   };
   return (
     <div
-      className="flex flex-col  align-center oregoBG  h-screen w-full 
-     overflow-hidden"
+      className="flex flex-col  align-center landingBG  h-screen w-[100%] 
+     overflow-hidden font-Comfortaa"
     >
-      <div className="w-[96%] h-[100%] max-lg:mt-12 mt-8 rounded-2xl mx-auto ">
-        <img src='/oregoLogo.svg' alt="" className="h-[3rem] ml-3" />
-        <div className="scrollable-wrapper2 mt-4 border-2 border-white90 h-[80dvh] rounded-3xl dropshadow ">
+      <div className="w-[96%] h-screen max-lg:mt-12  rounded-2xl mx-auto ">
+        <div className="scrollable-wrapper2 mt-4 border-2 border-white90 h-[75dvh] rounded-3xl dropshadow mt-[5rem] lg:mt-[5rem]">
           <div className=" overflow-x-hidden scrollable-content overflow-y-auto  bg-black90  rounded-3xl dropshadow mx-auto h-[100%]">
             {chatHistory.map((item, index) => {
               let formattedContent;
@@ -212,19 +212,7 @@ function Chat() {
                 >
                   {" "}
                   {formattedContent}{" "}
-                  <span onClick={() => deleteMessage(index)}>
-                    {" "}
-                    <svg
-                      className="delete-icon"
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="24"
-                      viewBox="0 -960 960 960"
-                      width="24"
-                    >
-                      {" "}
-                      <path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z" />{" "}
-                    </svg>{" "}
-                  </span>{" "}
+                  
                 </div>
               );
             })}
@@ -249,7 +237,7 @@ function Chat() {
                   </div>
                 ) : (
                   <button
-                    className="bg-[#3B9FEE] group rounded-3xl max-lg:-ml-8 w-12 h-12 justify-center align-center mt-4 ml-5 transition duration-500 ease-in-out hover:bg-transparent border-2 border-[#3B9FEE]"
+                    className="bg-[#3B9FEE] group rounded-3xl max-lg:-ml-8 w-12 h-12 justify-center align-center mt-[1.6rem] ml-5 transition duration-500 ease-in-out hover:bg-transparent border-2 border-[#3B9FEE]"
                     onClick={handleSubmit}
                     disabled={isLoading}
                   >
@@ -262,7 +250,7 @@ function Chat() {
                 )}
               
            
-                    <button className=" max-lg:hidden group border-2 border-primary rounded-3xl w-12 h-12 justify-center align-center mt-4 ml-5 mr-6 hover:bg-primary transition duration-500 ease-in-out">
+                    <button className=" max-lg:hidden group border-2 border-primary rounded-3xl w-12 h-12 justify-center align-center mt-[1.6rem] ml-5 mr-6 hover:bg-primary transition duration-500 ease-in-out">
                       <img
                         src='/refresh-white.svg'
                         alt="Refresh Icon"

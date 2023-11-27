@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import Navbar from "./navbar";
-import Footer from "./footer"
 
 export default function Layout({ children }) {
   const [showNavbar, setShowNavbar] = useState(false);
@@ -27,10 +26,9 @@ export default function Layout({ children }) {
     <><html><body>
       <div className="min-h-screen bg-gray-100">
         <div className={`navbar ${showNavbar ? 'slide-in' : ''}`}>
-          <Navbar />
+          <Navbar style={{ zIndex: 999 }} />
         </div>
-        <main>{children}</main>
-        <Footer />
+          <main >{children}</main>
       </div>
       </body></html>
     </>

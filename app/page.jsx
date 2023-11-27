@@ -2,6 +2,8 @@ import Image from "next/image";
 import "./globals.css";
 import { LinearGradient } from "react-text-gradients";
 import ExpandableText from "./components/ExpandableText";
+import Link from "next/link";
+
 
 export default function Home() {
   return (
@@ -20,11 +22,11 @@ export default function Home() {
 
 
 
-            <a href="">
+            <Link href="/chat">
               <button className="text-white px-4 py-2 max-lg:hidden rounded-xl   hover:bg-[#00000090] s transition-all cursor-pointer duration-1000 ease-in-out mx-auto">
                 CHAT
               </button>
-            </a>
+            </Link>
             <a href="/impressum">
               <button className="text-white px-4 py-2 max-lg:hidden rounded-xl   hover:bg-[#00000090] s transition-all cursor-pointer duration-1000 ease-in-out">
                 IMPRESSUM
@@ -346,7 +348,7 @@ export default function Home() {
           <p className="text-third">business</p>
         </div>
 
-        <ExpandableText maxLength={300}>
+        <ExpandableText maxLength={300} style={{ zIndex: 1 }}>
           Als Unternehmen ist es wichtig, dass Ihr Fuhrpark reibungslos
           funktioniert. Jeder Verkehrsunfall kann kostspielige Ausfallzeiten
           verursachen und Ihre Geschäftsabläufe stören. Bei Orego verstehen wir
@@ -371,6 +373,21 @@ export default function Home() {
           Unternehmen. Kontaktieren Sie uns noch heute, um mehr über unsere
           Dienstleistungen für Unternehmen zu erfahren.
         </ExpandableText>
+      </div>
+      <div className="landingBG text-white p-4">
+        <div className="container mt-6 mx-auto grid md:flex-row justify-center items-center text-center font-Comfortaa text-xs">
+                <p className="font-black">OREGO UG (haftungsbeschränkt)</p>
+                <p>Vertr. d.d. Geschäftsführer: Vasiliki Cirtist-Kröger </p>
+                <p className="mt-3">Cottbusser Str. 76</p>
+                <p>40625 Düsseldorf</p>
+                <p className="mt-3">Telefon: +49 211 740 728 40</p>
+                <p>E-Mail: info@orego.group</p>
+                <p className="mt-3">StNr: 133/5858/1952</p>
+                <p>Registergericht: Amtsgericht Düsseldorf</p>
+                <p>Registernummer: HRB 99988</p>
+            <p className="mt-3 mb-6">&copy; {new Date().getFullYear()} Orego UG. All rights reserved.</p>
+        
+        </div>
       </div>
     </main>
   );

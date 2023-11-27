@@ -1,9 +1,40 @@
 import React from 'react';
 import "../globals.css";
+import Link from 'next/link'
 
 const Impressum = () => {
   return (
-    <div className="container landingBG mx-auto px-4 lg:px-[20%]  py-[7rem] text-white font-Comfortaa">
+    <div className=" landingBG mx-auto px-4 lg:px-[20%]  py-[2rem] text-white font-Comfortaa">
+      <div className="flex flex-row justify-evenly mb-[5rem]">
+      <Link href='/'><img src="./oregoLogo.svg" alt="" className="h-[4rem] lg:h-[5rem]" /></Link>
+
+
+          <div className="flex flex-row  justify-between lg:justify-around content-evenly">
+
+
+
+            <Link href="/chat">
+              <button className="text-white px-4 py-2 max-lg:hidden rounded-xl   hover:bg-[#00000090] s transition-all cursor-pointer duration-1000 ease-in-out mx-auto">
+                CHAT
+              </button>
+            </Link>
+            <a href="/impressum">
+              <button className="text-white px-4 py-2 max-lg:hidden rounded-xl   hover:bg-[#00000090] s transition-all cursor-pointer duration-1000 ease-in-out">
+                IMPRESSUM
+              </button>
+            </a>
+            <a href="/datenschutz">
+              <button className="text-white px-4 py-2 max-lg:hidden rounded-xl   hover:bg-[#00000090] s transition-all cursor-pointer duration-1000 ease-in-out">
+                DATENSCHUTZ
+              </button>
+            </a>
+            <a href="/faq">
+              <button className="text-white px-4 py-2 max-lg:hidden rounded-xl   hover:bg-[#00000090] s transition-all cursor-pointer duration-1000 ease-in-out">
+                FAQ
+              </button>
+            </a>
+          </div>
+        </div>
       <h1 className="text-3xl font-bold mb-6">IMPRESSUM</h1>
       
       <p className="mb-4">
