@@ -60,11 +60,7 @@ function Chat() {
     }
   };
 
-  const deleteMessage = (index) => {
-    const newChatHistory = [...chatHistory];
-    newChatHistory.splice(index, 1);
-    setChatHistory(newChatHistory);
-  };
+
 
   const handleSubmit = async () => {
     if (!message.trim()) {
@@ -106,7 +102,7 @@ function Chat() {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ***`,
+            Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`,
           },
           body: JSON.stringify(requestData),
           signal: controller.signal, // add this line

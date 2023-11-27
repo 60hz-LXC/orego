@@ -37,7 +37,7 @@ export default function Home() {
                 DATENSCHUTZ
               </button>
             </a>
-            <a href="">
+            <a href="/faq">
               <button className="text-white px-4 py-2 max-lg:hidden rounded-xl   hover:bg-[#00000090] s transition-all cursor-pointer duration-1000 ease-in-out">
                 FAQ
               </button>

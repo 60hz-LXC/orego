@@ -6,7 +6,7 @@ const FAQ = () => {
   return (
     <div className="landingBG mx-auto px-4 lg:px-[20%] py-8 text-white font-Comfortaa h-screen">
       <div className="flex flex-row justify-evenly mb-[5rem]">
-        <img src="./oregoLogo.svg" alt="" className="h-[4rem] lg:h-[5rem]" />
+        <Link href="/"><img src="./oregoLogo.svg" alt="" className="h-[4rem] lg:h-[5rem]" /></Link>
 
         <div className="flex flex-row justify-between lg:justify-around content-evenly">
           <Link href="/chat">
