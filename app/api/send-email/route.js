@@ -15,7 +15,7 @@ export async function POST(req) {
 
   const mailOptions = {
     from: process.env.EMAIL_USER,
-    to: 'LachlanCameronn@gmail.com',
+    to: 'info@orego.group',
     subject: 'Neue Kontaktaufnahme über Orego',
     html: `
       <div style="backgorund: d3d3d3; width: 100%; height: 100%;> 

@@ -21,7 +21,7 @@ export async function POST(req) {
 
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: 'LachlanCameronn@gmail.com',
+      to: 'info@orego.group',
       subject: 'Neue Schadensmeldung',
       html: `
         <div style="background: #d3d3d3; width: 100%; height: 100%;">
