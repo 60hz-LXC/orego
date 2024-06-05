@@ -11,11 +11,6 @@ const Datenschutz = () => {
         </Link>
 
         <div className="flex flex-row  justify-between lg:justify-around content-evenly">
-          <Link href="/chat">
-            <button className="text-white px-4 py-2 max-lg:hidden rounded-xl   hover:bg-[#00000090] s transition-all cursor-pointer duration-1000 ease-in-out mx-auto">
-              CHAT
-            </button>
-          </Link>
           <a href="/impressum">
             <button className="text-white px-4 py-2 max-lg:hidden rounded-xl   hover:bg-[#00000090] s transition-all cursor-pointer duration-1000 ease-in-out">
               IMPRESSUM
@@ -51,8 +46,7 @@ const Datenschutz = () => {
         <br />
         Cottbusser Str. 76, 40625 Düsseldorf, Deutschland.
         <br />
-        Telefonnummer: +49 (0) 211 740 728 40
-        <br />
+        Telefonnummer: +49 175 219 1624
         E-Mail-Adresse: info@orego.group
         <br />
         <br />

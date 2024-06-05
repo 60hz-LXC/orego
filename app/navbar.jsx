@@ -23,7 +23,7 @@ export default function Navbar() {
   }, [isOpen]);
 
   const menuItems = [
-    { name: 'Chat', href: '/chat' },
+    { name: 'Schaden Melden', href: '/form' },
     { name: 'FAQ', href: '/faq' },
     { name: 'Impressum', href: '/impressum' },
     { name: 'Datenschutz', href: '/datenschutz' },

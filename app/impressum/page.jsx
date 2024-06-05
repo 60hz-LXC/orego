@@ -13,11 +13,7 @@ const Impressum = () => {
 
 
 
-            <Link href="/chat">
-              <button className="text-white px-4 py-2 max-lg:hidden rounded-xl   hover:bg-[#00000090] s transition-all cursor-pointer duration-1000 ease-in-out mx-auto">
-                CHAT
-              </button>
-            </Link>
+           
             <a href="/impressum">
               <button className="text-white px-4 py-2 max-lg:hidden rounded-xl   hover:bg-[#00000090] s transition-all cursor-pointer duration-1000 ease-in-out">
                 IMPRESSUM
@@ -43,7 +39,7 @@ const Impressum = () => {
         Vasiliki Cirtist-Kröger<br />
         Cottbusser Str. 76<br />
         40625 Düsseldorf<br />
-        Telefon: +49 211 740 728 40<br />
+        Telefon: +49 175 219 1624<br />
         E-Mail: info@orego.group<br />
         StNr: 133/5858/1952<br />
         Registergericht: Amtsgericht Düsseldorf<br />

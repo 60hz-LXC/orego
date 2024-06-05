@@ -1,16 +1,34 @@
+"use client"
+import { useState } from 'react';
 import Image from "next/image";
 import "./globals.css";
 import { LinearGradient } from "react-text-gradients";
 import ExpandableText from "./components/ExpandableText";
 import Link from "next/link";
-
+import Popup from './components/Popup'; // Make sure to adjust the import path
 
 export default function Home() {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const handleOpenPopup = () => {
+    setIsPopupOpen(true);
+  };
+
+  const handleClosePopup = () => {
+    setIsPopupOpen(false);
+  };
+
   return (
     <main className="flex min-h-screen flex-col items-center  content-start font-Comfortaa overflow-x-hidden">
+       {isPopupOpen && <Popup onClose={handleClosePopup} />}
       <div className="landingBG  h-fit  bg-black grid content-start p-6 pr-[1.5rem] ">
 
-
+    <div className='flex flex-row  mx-auto items-center mb-10 gap-10'>
+      <p className='text-white'>SOCIALS</p>
+      <Link href="https://www.instagram.com/orego.group/?utm_source=ig_web_button_share_sheet"><img src="./instagram.svg" className='h-[2.5rem] w-[2.5rem] mx-auto hover:scale-125 transition-all cursor-pointer duration-300 ease-in-out' alt="" /></Link>
+      <Link href="https://youtube.com/@orego.group23?si=sGjstOPYwJW7y1dt"><img src="./youtube.svg" className='h-[2.5rem] w-[2.5rem] mx-auto hover:scale-125 transition-all cursor-pointer duration-300 ease-in-out' alt="" /></Link>
+      <img src="./tiktok.svg" className='h-[2.5rem] w-[2.5rem] mx-auto hover:scale-125 transition-all cursor-pointer duration-300 ease-in-out' alt="" />
+    </div>
         <div className="flex flex-row justify-evenly ">
           <img
             src="./oregoLogo.svg"
@@ -22,11 +40,7 @@ export default function Home() {
 
 
 
-            <Link href="/chat">
-              <button className="text-white px-4 py-2 max-lg:hidden rounded-xl   hover:bg-[#00000090] s transition-all cursor-pointer duration-1000 ease-in-out mx-auto">
-                CHAT
-              </button>
-            </Link>
+          
             <a href="/impressum">
               <button className="text-white px-4 py-2 max-lg:hidden rounded-xl   hover:bg-[#00000090] s transition-all cursor-pointer duration-1000 ease-in-out">
                 IMPRESSUM
@@ -286,9 +300,11 @@ export default function Home() {
           Gerne vermitteln wir dir auf Wunsch auch eine Werkstatt!
         </p>
 
-        <button className="text-white text-[1rem]  mx-auto mt-[3rem]  bg-gradient-to-r from-primary to-secondary rounded-full font-montBlack uppercase w-fit h-fit p-4 px-3 lg:p-5 hover:scale-[1.1] shadow-2xl hover:bg-[#ffffff]  transition duration-300 ease-in-out lg:mt-[3rem] ">
-          UNFALL MELDEN
-        </button>
+        <a href="/form" className="mx-auto">
+          <button className="text-white text-[1rem]  mx-auto mt-[3rem]  bg-gradient-to-r from-primary to-secondary rounded-full font-montBlack uppercase w-fit h-fit p-4 px-3 lg:p-5 hover:scale-[1.1] shadow-2xl hover:bg-[#ffffff]  transition duration-300 ease-in-out lg:mt-[3rem] ">
+            UNFALL MELDEN
+          </button>
+        </a>
       </div>
 
       {/* 4th section */}
@@ -377,10 +393,10 @@ export default function Home() {
       <div className="landingBG text-white p-4">
         <div className="container mt-6 mx-auto grid md:flex-row justify-center items-center text-center font-Comfortaa text-xs">
                 <p className="font-black">OREGO UG (haftungsbeschränkt)</p>
-                <p>Vertr. d.d. Geschäftsführer: Vasiliki Cirtist-Kröger </p>
+                <p>Vertr. d.d. Geschäftsführer: Vasiliki Christi-Kröger </p>
                 <p className="mt-3">Cottbusser Str. 76</p>
                 <p>40625 Düsseldorf</p>
-                <p className="mt-3">Telefon: +49 211 740 728 40</p>
+                <p className="mt-3">Telefon: +49 175 219 1624</p>
                 <p>E-Mail: info@orego.group</p>
                 <p className="mt-3">StNr: 133/5858/1952</p>
                 <p>Registergericht: Amtsgericht Düsseldorf</p>
@@ -388,6 +404,12 @@ export default function Home() {
             <p className="mt-3 mb-6">&copy; {new Date().getFullYear()} Orego UG. All rights reserved.</p>
         
         </div>
+        <button
+          className="fixed bottom-4 right-4 bg-blue-500 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition"
+          onClick={handleOpenPopup}
+        >
+          Kontakt
+        </button>
       </div>
     </main>
   );
