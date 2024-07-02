@@ -35,30 +35,7 @@ const Datenschutz = () => {
         (Informationspflichten)
       </h2>
 
-      <h3 className="text-xl font-semibold mt-4 mb-2">
-        Name und Kontaktdaten des für die Verarbeitung Verantwortlichen sowie
-        des betrieblichen Datenschutzbeauftragten
-      </h3>
-      <p className="mb-4">
-        <strong>Kontaktdaten des Unternehmens (Verantwortlicher):</strong>
-        <br />
-        OREGO UG (haftungsbeschränkt)
-        <br />
-        Cottbusser Str. 76, 40625 Düsseldorf, Deutschland.
-        <br />
-        Telefonnummer: +49 175 219 1624
-        E-Mail-Adresse: info@orego.group
-        <br />
-        <br />
-        <strong>Kontaktdaten des Datenschutzbeauftragten:</strong>
-        <br />
-        Dipl.-Kfm. Günther Otten
-        <br />
-        Telefonnummer +49 (0) 221 9783130
-        <br />
-        E-Mail-Adresse: guenther.otten@t-online.de
-        <br />
-      </p>
+      
 
       <h3 className="text-xl font-semibold mt-4 mb-2">
         2. Erhebung und Speicherung personenbezogener Daten sowie Art und Zweck
@@ -68,7 +45,7 @@ const Datenschutz = () => {
         a) beim Besuch der der Website
       </h4>
       <p className="mb-4">
-        Beim Aufruf unserer Website „xxx“ werden durch den auf Ihrem Endgerät
+        Beim Aufruf unserer Website www.orego.group werden durch den auf Ihrem Endgerät
         zum Einsatz kommenden Browser automatisch Informationen an den Server
         unserer Website gesendet. Diese Informationen werden temporär in einem
         sogenannten Logfile gespeichert. Folgende Informationen werden dabei

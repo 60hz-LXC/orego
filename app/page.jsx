@@ -1,5 +1,5 @@
 "use client"
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from "next/image";
 import "./globals.css";
 import { LinearGradient } from "react-text-gradients";
@@ -9,6 +9,13 @@ import Popup from './components/Popup'; // Make sure to adjust the import path
 
 export default function Home() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  useEffect(() => {
+    // Automatically open the popup when the component mounts
+    setTimeout(() => {
+      setIsPopupOpen(true);
+    }, 500); // Delay to make the popup feel more natural, adjust as needed
+  }, []);
 
   const handleOpenPopup = () => {
     setIsPopupOpen(true);
@@ -27,7 +34,7 @@ export default function Home() {
       <p className='text-white'>SOCIALS</p>
       <Link href="https://www.instagram.com/orego.group/?utm_source=ig_web_button_share_sheet"><img src="./instagram.svg" className='h-[2.5rem] w-[2.5rem] mx-auto hover:scale-125 transition-all cursor-pointer duration-300 ease-in-out' alt="" /></Link>
       <Link href="https://youtube.com/@orego.group23?si=sGjstOPYwJW7y1dt"><img src="./youtube.svg" className='h-[2.5rem] w-[2.5rem] mx-auto hover:scale-125 transition-all cursor-pointer duration-300 ease-in-out' alt="" /></Link>
-      <img src="./tiktok.svg" className='h-[2.5rem] w-[2.5rem] mx-auto hover:scale-125 transition-all cursor-pointer duration-300 ease-in-out' alt="" />
+      <Link href="https://www.facebook.com/share/VWfCnSvQsQMDs6Tn/?mibextid=WC7FNe"><img src="./facebook.svg" className='h-[2.3rem] w-[2.3rem] mx-auto hover:scale-125 transition-all cursor-pointer duration-300 ease-in-out' alt="" /></Link>
     </div>
         <div className="flex flex-row justify-evenly ">
           <img
@@ -188,6 +195,23 @@ export default function Home() {
           So können wir sicherstellen, dass jeder Schritt optimal durchgeführt
           wird.
           <br></br>
+        </ExpandableText>
+        <img src="vicky-logo-blue.svg" className="h-[4rem] mt-12" alt="" />
+        <h1 className="font-black mt-4">
+          Sie brauchen einen Anwalt?
+        </h1>
+        <ExpandableText maxLength={540}>
+        Die KI-basierte Software bietet Ihnen sofortige Antworten auf Ihre rechtlichen Fragen rund um Autounfälle. Egal, ob Sie herausfinden möchten, wer Schuld hat, oder andere rechtliche Ratschläge benötigen – VickyChat steht Ihnen rund um die Uhr zur Verfügung.
+
+ <br></br> <br></br>
+    
+ Mit VickyChat erhalten Sie nicht nur schnelle und präzise Antworten, sondern auch Empfehlungen für echte Anwälte. Unsere Software kann Ihnen kompetente Juristen vorschlagen und automatisch die relevanten Fallinformationen weiterleiten, damit Sie sofort professionelle Hilfe erhalten.
+          <br></br>
+          <Link href='https://vickychat.de' className='grid' >
+            <button className="text-white text-[1rem]  mx-auto mt-[3rem]  bg-gradient-to-r from-primary to-secondary rounded-full font-montBlack uppercase w-fit h-fit p-4 px-3 lg:p-5 hover:scale-[1.1] shadow-xl mb-12 hover:bg-[#ffffff]  transition duration-300 ease-in-out lg:mt-[3rem] ">
+             ZU VICKY
+            </button>
+          </Link>
         </ExpandableText>
       </div>
 
@@ -393,7 +417,7 @@ export default function Home() {
       <div className="landingBG text-white p-4">
         <div className="container mt-6 mx-auto grid md:flex-row justify-center items-center text-center font-Comfortaa text-xs">
                 <p className="font-black">OREGO UG (haftungsbeschränkt)</p>
-                <p>Vertr. d.d. Geschäftsführer: Vasiliki Christi-Kröger </p>
+                <p>Vertr. d.d. Geschäftsführer: Vasiliki Cirtsi-Kröger </p>
                 <p className="mt-3">Cottbusser Str. 76</p>
                 <p>40625 Düsseldorf</p>
                 <p className="mt-3">Telefon: +49 175 219 1624</p>
