@@ -46,6 +46,7 @@ export default function Home() {
       <Link href="https://www.instagram.com/orego.group/?utm_source=ig_web_button_share_sheet"><img src="./instagram.svg" className='h-[2.5rem] w-[2.5rem] mx-auto hover:scale-125 transition-all cursor-pointer duration-300 ease-in-out' alt="" /></Link>
       <Link href="https://youtube.com/@orego.group23?si=sGjstOPYwJW7y1dt"><img src="./youtube.svg" className='h-[2.5rem] w-[2.5rem] mx-auto hover:scale-125 transition-all cursor-pointer duration-300 ease-in-out' alt="" /></Link>
       <Link href="https://www.facebook.com/share/VWfCnSvQsQMDs6Tn/?mibextid=WC7FNe"><img src="./facebook.svg" className='h-[2.3rem] w-[2.3rem] mx-auto hover:scale-125 transition-all cursor-pointer duration-300 ease-in-out' alt="" /></Link>
+      <Link href="https://www.tiktok.com/@orego.group"><img src="./tiktok.svg" className='h-[2.5rem] w-[2.5rem] mx-auto hover:scale-125 transition-all cursor-pointer duration-300 ease-in-out' alt="" /></Link>
     </div>
         <div className="flex flex-row justify-evenly ">
           <img
