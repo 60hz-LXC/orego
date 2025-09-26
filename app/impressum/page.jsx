@@ -35,7 +35,7 @@ const Impressum = () => {
       
       <p className="mb-4">
         OREGO UG (haftungsbeschränkt)<br />
-        Vertr. d.d. Geschäftsführer<br />
+        Vertr. d.d. Geschäftsführerin<br />
         Vasiliki Cirtsi-Kröger<br />
         Cottbusser Str. 76<br />
         40625 Düsseldorf<br />

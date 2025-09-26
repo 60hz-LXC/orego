@@ -40,9 +40,12 @@ export default function Popup({ onClose }) {
   return (
     <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black bg-opacity-50">
       <div className="bg-white p-6 rounded-lg shadow-lg w-[90%] max-w-md">
-        <h2 className="text-2xl font-bold ">Direkte Kontaktaufnahme</h2>
+        <h2 className="text-2xl font-bold ">UNFALL MELDEN!</h2>
         <p className="mb-4 text-sm mt-2">
-          Hier kannst du direkt mit uns Kontakt aufnehmen. Hinterlasse uns einfach deine Telefonnummer und deinen Namen und wir werden uns umgehend bei dir melden.
+          Unter der Telefonnummer 0211 12345678 kannst du telefonisch deinen Unfall melden. Unser digitaler Assistent steht dir dafür <span className="underline">rund-um-die-Uhr</span> (auch an Sonn- und Feiertagen) zur Verfügung!
+        </p>
+        <p className="mb-4 text-sm">
+          Du wünschst einen Rückruf? Dann hinterlasse uns einfach deinen Namen und deine Telefonnummer. Wir melden uns umgehend bei dir.
         </p>
         <form onSubmit={handleSubmit}>
           <div className="mb-4 grid">
@@ -72,13 +75,12 @@ export default function Popup({ onClose }) {
             >
               {isLoading ? 'Senden...' : 'Senden'}
             </button>
-          <p className="mb-4 text-sm leading-[1rem]">
-            <span className='font-black  text-base leading-10'>Was passiert dann?</span><br />
-            1. Wir melden uns bei dir, um deinen Schaden bei uns aufzunehmen<br /><br />
-            2. Wir lassen deinen Schaden durch einen Gutachter bemessen<br /><br />
-            3. Dein Anspruch wird durch einen Anwalt bei der gegnerischen Versicherung geltend gemacht<br /><br />
-            4. Wir zahlen dir deinen Anspruch aus
-          </p>
+          <div className="mb-4 p-3 bg-gray-100 rounded">
+            <p className="text-sm font-semibold mb-2">Ein kurzer Hinweis für deinen Anruf:</p>
+            <p className="text-sm">
+              Unser digitaler Assistent nimmt dein Anliegen <span className="underline">zuverlässig</span> auf. Sprich dazu bitte <span className="underline">natürlich und</span> in vollständigen Sätzen. Auflegen, unvollständige Angaben oder nur Stichpunkte führen zu einer Verzögerung.
+            </p>
+          </div>
           <div className="flex justify-end">
      
             <button

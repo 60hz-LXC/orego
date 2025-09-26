@@ -6,9 +6,11 @@ import { LinearGradient } from "react-text-gradients";
 import ExpandableText from "./components/ExpandableText";
 import Link from "next/link";
 import Popup from './components/Popup'; // Make sure to adjust the import path
+import PhonePopup from './components/PhonePopup';
 
 export default function Home() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [isPhonePopupOpen, setIsPhonePopupOpen] = useState(false);
 
   useEffect(() => {
     // Automatically open the popup when the component mounts
@@ -25,9 +27,18 @@ export default function Home() {
     setIsPopupOpen(false);
   };
 
+  const handleOpenPhonePopup = () => {
+    setIsPhonePopupOpen(true);
+  };
+
+  const handleClosePhonePopup = () => {
+    setIsPhonePopupOpen(false);
+  };
+
   return (
     <main className="flex min-h-screen flex-col items-center  content-start font-Comfortaa overflow-x-hidden">
        {isPopupOpen && <Popup onClose={handleClosePopup} />}
+       {isPhonePopupOpen && <PhonePopup onClose={handleClosePhonePopup} />}
       <div className="landingBG  h-fit  bg-black grid content-start p-6 pr-[1.5rem] ">
 
     <div className='flex flex-row  mx-auto items-center mb-10 gap-10'>
@@ -88,8 +99,7 @@ export default function Home() {
                 Komplette Unfallabwicklung
               </p>
               <p className="text-white text-[.6rem]  mt-0 lg:text-[.8rem] lg:w-[25rem]">
-                Wir übernehmen alle Schritte von der Gutachtenerstellung bis zur
-                Schmerzensgeldforderung.
+              Unabhängige Experten und Anwälte setzen sich dafür ein, dass du eine optimale Entschädigung erhältst.
               </p>
             </div>
             <div className="grid mt-10">
@@ -116,20 +126,20 @@ export default function Home() {
                 alt=""
               />
               <p className="text-white text-[.9rem] mt-2 uppercase lg:text-[1.3rem]">
-                Individuelle Betreuung
+              UNFALL PER TELEFON MELDEN
               </p>
               <p className="text-white text-[.6rem]  mt-0 lg:text-[.8rem] lg:w-[25rem]">
-                Unabhängige Experten und Anwälte setzen sich für Ihre optimale
-                Entschädigung ein.
+              Melde deinen Unfall rund-um-die-Uhr (auch an Sonn- und Feiertagen) über unseren digitalen Assistenten.
               </p>
             </div>
-            <a href="/form" className="grid">
-              <button className="text-white text-[1.5rem]  mx-auto mt-[3rem]  bg-black bg-opacity-50 rounded-full font-montBlack uppercase w-fit h-fit p-4 lg:p-5 hover:scale-[1.02] shadow-base hover:bg-opacity-70 hover:shadow-2xl  transition duration-300 ease-in-out lg:mt-[6rem] ml-0 max-lg:mx-auto">
-                <LinearGradient gradient={["to left", "#FF00FF ,#3B9FEE"]}>
-                  UNFALL MELDEN
-                </LinearGradient>
-              </button>
-            </a>
+            <button 
+              onClick={handleOpenPhonePopup}
+              className="text-white text-[1.5rem]  mx-auto mt-[3rem]  bg-black bg-opacity-50 rounded-full font-montBlack uppercase w-fit h-fit p-4 lg:p-5 hover:scale-[1.02] shadow-base hover:bg-opacity-70 hover:shadow-2xl  transition duration-300 ease-in-out lg:mt-[6rem] ml-0 max-lg:mx-auto"
+            >
+              <LinearGradient gradient={["to left", "#FF00FF ,#3B9FEE"]}>
+                UNFALL MELDEN
+              </LinearGradient>
+            </button>
           </div>
         </div>
       </div>
@@ -143,57 +153,28 @@ export default function Home() {
         <img src="info.svg" className="h-[8rem] " alt="" />
         <h1 className="font-black mt-4">Allgemeine Informationen</h1>
         <ExpandableText maxLength={540}>
-          Als Expertenteam für die Unfallschadenregulierung sind wir darauf
-          spezialisiert, unseren Kunden bei der Abwicklung von Verkehrsunfällen
-          zu helfen. Wir unterstützen unsere Auftraggeber dabei, ihre Ansprüche
-          gegenüber der Versicherung des Unfallverursachers geltend zu machen
-          und durchzusetzen. Dabei übernehmen wir sämtliche Schritte der
-          Schadensabwicklung: Von der Erstellung eines Gutachtens über die
-          Anspruchsanmeldung bei der gegnerischen Versicherung, der Vermittlung
-          eines Mietwagens oder einer Werkstatt, der Geltendmachung der
-          Reparaturkosten und der Zurückweisung von unberechtigten Kürzungen,
-          bis hin zur Durchsetzung von Schmerzensgeldansprüchen. <br></br>{" "}
-          <br></br>
-          Unser Ziel ist es, dem Geschädigten eine schnelle und unkomplizierte
-          Abwicklung seines Unfallschadens zu ermöglichen. Dazu arbeiten wir eng
-          mit unseren Partnern zusammen und setzen uns für die Interessen
-          unserer Kunden ein. Wir beraten unsere Kunden umfassend in allen
-          Fragen rund um den Unfall und stehen ihnen während der Abwicklung zur
-          Seite! <br></br> <br></br>
-          Durch unsere jahrelange Erfahrung in diesem Bereich verfügen wir über
-          ein breites Netzwerk an Experten wie bspw. Sachverständigen oder
-          Anwälten, auf die wir im Bedarfsfall zurückgreifen können. So stellen
-          wir sicher, dass unsere Kunden stets bestmöglich betreut werden.{" "}
-          <br></br> <br></br>
-          Insgesamt bieten wir eine professionelle und kompetente Unterstützung
-          bei der Abwicklung eines Unfallschadens an - schnell, unkompliziert
-          und stets mit dem Ziel einer optimalen Entschädigung unserer
-          Auftraggeber.
+        Als Expertenteam für die Unfallschadenabwicklung sind wir darauf spezialisiert, unseren Kunden bei der Abwicklung von Verkehrsunfällen zu helfen. Wir unterstützen dich dabei, deine Ansprüche gegenüber der Versicherung des Unfallverursachers geltend zu machen und durchzusetzen. Dabei kümmern wir uns falls erwünscht um sämtliche Schritte der Schadensabwicklung: Von der Erstellung eines Gutachtens, über die Anspruchsanmeldung bei der gegnerischen Versicherung, der Vermittlung eines Mietwagens oder einer Werkstatt, der Geltendmachung der Reparaturkosten und der Zurückweisung von unberechtigten Kürzungen, bis hin zur Durchsetzung von Schmerzensgeldansprüchen.<br></br><br></br> 
+
+Unser Ziel ist es, dir eine schnelle und unkomplizierte Abwicklung seines Unfallschadens zu ermöglichen. Dazu arbeiten wir eng mit unseren Partnern zusammen und setzen uns für die Interessen unserer Kunden ein. <br></br><br></br> 
+
+Durch unsere jahrelange Erfahrung in diesem Bereich verfügen wir über ein breites Netzwerk an Experten wie bspw. Sachverständigen oder Rechtsanwälten, auf die wir im Bedarfsfall zurückgreifen können. So stellen wir sicher, dass unsere Kunden stets bestmöglich betreut werden.<br></br><br></br> 
+
+Insgesamt bieten wir eine professionelle und kompetente Unterstützung bei der Abwicklung eines Unfallschadens an - schnell, unkompliziert und stets mit dem Ziel einer optimalen Entschädigung unserer Auftraggeber!
+
         </ExpandableText>
         <img src="crash.svg" className="h-[8rem] mt-12" alt="" />
         <h1 className="font-black mt-4">
           Unfallabwicklung für den Geschädigten
         </h1>
         <ExpandableText maxLength={540}>
-          Wir bieten eine komplette Unfallabwicklung und kümmern uns um alle
-          notwendigen Schritte wie Gutachter, Anwalt, Werkstatt, Mietwagen,
-          Psychologen. Du musst uns lediglich deinen Unfall melden und hast
-          trotzdem immer die freie Wahl, ob du unsere Vorschläge annehmen
-          möchtest oder nicht. <br></br> <br></br>
+        Wir kümmern uns um alles, was du brauchst: notwendige Dienstleister wie Gutachter, Anwalt, Werkstatt, Mietwagen, Psychologen. Du musst uns lediglich deinen Unfall melden und hast trotzdem immer die freie Wahl, ob du unsere Vorschläge annehmen möchtest oder nicht. <br></br> <br></br>
           <span className="font-black text-md">
             <LinearGradient gradient={["to left", "#FF00FF ,#3B9FEE"]}>
               Kein Papierkram, kein Zeitaufwand, keine Kosten.
             </LinearGradient>
           </span>
           <br></br> <br></br>
-          Nach einem Unfall ist es oft schwierig und zeitaufwendig, alle
-          notwendigen Schritte selbst zu erledigen. Hier kommt die OREGO ins
-          Spiel: Wir kümmern uns um alles Notwendige - von der Schadensaufnahme
-          bis hin zur Reparatur deines Fahrzeugs. Unsere Dienstleister sind
-          dabei auf ihre jeweiligen Aufgabenbereiche spezialisiert und arbeiten
-          völlig versicherungsunabhängig. <br></br> <br></br>
-          So können wir sicherstellen, dass jeder Schritt optimal durchgeführt
-          wird.
+          Nach einem Unfall ist es oft schwierig und zeitaufwendig, alle notwendigen Schritte selbst zu erledigen. Hier kommt die OREGO ins Spiel: Wir kümmern uns um alles Notwendige - von der Schadensaufnahme bis hin zur Reparatur deines Fahrzeugs. Unsere Dienstleister sind dabei auf ihre jeweiligen Aufgabenbereiche spezialisiert und arbeiten völlig versicherungsunabhängig. So können wir sicherstellen, dass jeder Schritt optimal durchgeführt wird.
           <br></br>
         </ExpandableText>
         <img src="vicky-logo-blue.svg" className="h-[4rem] mt-12" alt="" />
@@ -207,7 +188,7 @@ export default function Home() {
     
  Mit VickyChat erhalten Sie nicht nur schnelle und präzise Antworten, sondern auch Empfehlungen für echte Anwälte. Unsere Software kann Ihnen kompetente Juristen vorschlagen und automatisch die relevanten Fallinformationen weiterleiten, damit Sie sofort professionelle Hilfe erhalten.
           <br></br>
-          <Link href='https://vickychat.de' className='grid' >
+          <Link href='https://vickychat.pro' className='grid' >
             <button className="text-white text-[1rem]  mx-auto mt-[3rem]  bg-gradient-to-r from-primary to-secondary rounded-full font-montBlack uppercase w-fit h-fit p-4 px-3 lg:p-5 hover:scale-[1.1] shadow-xl mb-12 hover:bg-[#ffffff]  transition duration-300 ease-in-out lg:mt-[3rem] ">
              ZU VICKY
             </button>
@@ -248,7 +229,7 @@ export default function Home() {
 
       <div className="h-fit p-6 px-12 grid bg-white lg:px-[30%] pb-[5rem] w-[100%]">
         <img src="unfallmelden.svg" className="h-[8rem] " alt="" />
-        <h1 className="font-black mt-4">Unfall melden</h1>
+        <h1 className="font-black mt-4">Unfall telefonisch oder per Schadenformular melden</h1>
         <p className="text-sm mt-3">
           <span className="text-3xl">
             {" "}
@@ -267,9 +248,7 @@ export default function Home() {
               2.{" "}
             </LinearGradient>
           </span>
-          Nach Prüfung deiner Unfallmeldung, wirst du von einem unserer
-          Mitarbeiter unverbindlich kontaktiert, um die Details deines Falles
-          mit dir zu besprechen.
+          Nach Prüfung deiner Unfallmeldung, wirst du – in der Regel innerhalb weniger Stunden – von einem unserer Rechtsanwälte kontaktiert. Er klärt die Details deines Falles und nimmt eine <span className='font-bold'>kostenfreie Einschätzung</span> für dich vor.
         </p>
 
         <p className="text-sm mt-3">
@@ -279,15 +258,7 @@ export default function Home() {
               3.{" "}
             </LinearGradient>
           </span>
-          Die Beauftragung der OREGO kommt erst durch deine Unterschrift auf der
-          Vollmacht zustande. <br></br>
-          <br></br>{" "}
-          <LinearGradient gradient={["to left", "#FF00FF ,#3B9FEE"]}>
-            <span className="font-black">
-              Dein Vorteil: ab hier kümmern wir uns – kostenlos - um deine
-              Ansprüche!
-            </span>
-          </LinearGradient>
+          Du erhältst per E-Mail eine Vollmacht. Die Vollmacht kannst du digital signieren. Deine Reise mit uns ist komplett digital!
         </p>
 
         <p className="text-sm mt-3">
@@ -297,9 +268,7 @@ export default function Home() {
               4.{" "}
             </LinearGradient>
           </span>
-          Erst wenn du uns beauftragst, vermitteln wir dir -sofern erforderlich-
-          einen unabhängigen Sachverständigen, der sich umgehend bei dir meldet
-          und einen Termin zur Besichtigung deines Fahrzeugs vereinbart.
+          Sofern erforderlich, vermitteln wir dir einen unabhängigen Sachverständigen, der sich bei dir meldet und einen Termin zur Besichtigung deines Fahrzeugs ausmacht.
         </p>
 
         <p className="text-sm mt-3">
@@ -309,9 +278,7 @@ export default function Home() {
               5.{" "}
             </LinearGradient>
           </span>
-          Ein Rechtsanwalt informiert die gegnerische Versicherung und beziffert
-          dann mit dem Gutachten deine Ansprüche. Bei Rückfragen meldet sich der
-          Rechtsanwalt nochmal bei dir.
+          Der Rechtsanwalt informiert die gegnerische Versicherung und beziffert mit dem Gutachten deine Ansprüche. Damit wird die Versicherung unter Druck gesetzt!
         </p>
 
         <p className="text-sm mt-3">
@@ -324,11 +291,11 @@ export default function Home() {
           Gerne vermitteln wir dir auf Wunsch auch eine Werkstatt!
         </p>
 
-        <a href="/form" className="mx-auto">
-          <button className="text-white text-[1rem]  mx-auto mt-[3rem]  bg-gradient-to-r from-primary to-secondary rounded-full font-montBlack uppercase w-fit h-fit p-4 px-3 lg:p-5 hover:scale-[1.1] shadow-2xl hover:bg-[#ffffff]  transition duration-300 ease-in-out lg:mt-[3rem] ">
+      
+          <button onClick={handleOpenPhonePopup} className="text-white text-[1rem]  mx-auto mt-[3rem]  bg-gradient-to-r from-primary to-secondary rounded-full font-montBlack uppercase w-fit h-fit p-4 px-3 lg:p-5 hover:scale-[1.1] shadow-2xl hover:bg-[#ffffff]  transition duration-300 ease-in-out lg:mt-[3rem] ">
             UNFALL MELDEN
           </button>
-        </a>
+       
       </div>
 
       {/* 4th section */}
@@ -346,19 +313,12 @@ export default function Home() {
 
         <h2 className="text-white text-xl mt-8">Gutachter</h2>
         <p className="text-white text-[.8rem] mx-auto">
-          Dein Schadensfall wird von einem qualifizierten Kfz-Gutachter
-          begutachtet und genau berechnet. Ein unabhängiges Unfallgutachten ist
-          ein entscheidender Baustein für eine erfolgreiche Schadenregulierung.
+        Dein Schaden wird von einem qualifizierten Kfz-Gutachter begutachtet und genau berechnet. Ein unabhängiges Unfallgutachten ist ein entscheidender Baustein für eine erfolgreiche Schadenregulierung. Du hast bereits ein Gutachten? Kein Problem! In diesem Fall erfolgt die Bezifferung anhand des Gutachtens deines Gutachters!
         </p>
 
         <h2 className="text-white text-xl mt-8">Anwalt</h2>
         <p className="text-white text-[.8rem] mx-auto">
-          Die Geltendmachung deines Anspruchs gegenüber der gegnerischen
-          Versicherung erfolgt durch einen erfahrenen Anwalt. Sie können sich
-          entspannt zurücklehnen, denn wir arbeiten mit den besten
-          Rechtsanwälten zusammen, die für Ihre Rechte kämpfen und
-          sicherstellen, dass Sie den bestmöglichen Ausgang in Ihrem Fall
-          erzielen. Mit uns sind Sie in sicheren und kompetenten Händen.
+        Die Geltendmachung deines Anspruchs gegenüber der gegnerischen Versicherung erfolgt durch einen erfahrenen Anwalt. Du kannst dich entspannt zurücklehnen, denn wir arbeiten mit den besten Rechtsanwälten zusammen, die für dein Recht kämpfen und sicherstellen, dass der bestmögliche Ausgang in deinem Fall erzielt wird. Mit unseren Anwälten bist du in erfahrenen und kompetenten Händen!
         </p>
 
         <h2 className="text-white text-xl mt-8">Werkstatt</h2>
@@ -379,7 +339,7 @@ export default function Home() {
       <div className="bg-white lg:px-[30%]  h-fit  grid content-start p-12 py-6 pb-[5rem] pt-[3rem] w-[100%]">
         <h1 className="font-black mt-4 text-third font-montBlack uppercase mx-auto text-3xl">
           <LinearGradient gradient={["to left", "#FF00FF ,#3B9FEE"]}>
-            <span className="text-xl">Für</span> <br></br>Unternehmen
+            <span className="text-xl">Für</span> <br></br>FLOTTEN & FUHRPARKS
           </LinearGradient>
         </h1>
 
@@ -414,10 +374,28 @@ export default function Home() {
           Dienstleistungen für Unternehmen zu erfahren.
         </ExpandableText>
       </div>
+
+      {/* 6th section - Kfz-Sachverständige */}
+      <div className="bg-white lg:px-[30%]  h-fit  grid content-start p-12 py-6 pb-[5rem] pt-[3rem] w-[100%]">
+        <h1 className="font-black mt-4 text-third font-montBlack uppercase mx-auto text-3xl">
+          <LinearGradient gradient={["to left", "#FF00FF ,#3B9FEE"]}>
+            <br></br><span className='text-xl'>FÜR</span><br></br>KFZ-SACHVERSTÄNDIGE
+          </LinearGradient>
+        </h1>
+
+        <div className="flex flex-row gap-4 mt-6 mx-auto ">
+          <img src="/oregoLogo.svg" className="h-[3rem]" alt="" />{" "}
+          <p className="text-third">expert</p>
+        </div>
+
+        <ExpandableText maxLength={300} style={{ zIndex: 1 }}>
+          Du bist Kfz-Sachverständiger und auf der Suche nach einem zuverlässigen Partner, der sich um die Unfallschadenabwicklung für deine Kunden kümmert? Lass es uns wissen! Wir sind immer auf der Suche nach neuen Kfz-Sachverständigen, um unser Netzwerk weiter auszubauen.
+        </ExpandableText>
+      </div>
       <div className="landingBG text-white p-4">
         <div className="container mt-6 mx-auto grid md:flex-row justify-center items-center text-center font-Comfortaa text-xs">
                 <p className="font-black">OREGO UG (haftungsbeschränkt)</p>
-                <p>Vertr. d.d. Geschäftsführer: Vasiliki Cirtsi-Kröger </p>
+                <p>Vertr. d.d. Geschäftsführerin: Vasiliki Cirtsi-Kröger </p>
                 <p className="mt-3">Cottbusser Str. 76</p>
                 <p>40625 Düsseldorf</p>
                 <p className="mt-3">Telefon: +49 175 219 1624</p>
@@ -432,7 +410,7 @@ export default function Home() {
           className="fixed bottom-4 right-4 bg-blue-500 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition"
           onClick={handleOpenPopup}
         >
-          Kontakt
+          UNFALL MELDEN!
         </button>
       </div>
     </main>
