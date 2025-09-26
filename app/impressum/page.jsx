@@ -39,7 +39,7 @@ const Impressum = () => {
         Vasiliki Cirtsi-Kröger<br />
         Cottbusser Str. 76<br />
         40625 Düsseldorf<br />
-        Telefon: +49 175 219 1624<br />
+        Telefon: +49 211 987 403 55<br />
         E-Mail: info@orego.group<br />
         StNr: 133/5858/1952<br />
         Registergericht: Amtsgericht Düsseldorf<br />
