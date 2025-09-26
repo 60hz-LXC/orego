@@ -42,7 +42,7 @@ export default function Popup({ onClose }) {
       <div className="bg-white p-6 rounded-lg shadow-lg w-[90%] max-w-md">
         <h2 className="text-2xl font-bold ">UNFALL MELDEN!</h2>
         <p className="mb-4 text-sm mt-2">
-          Unter der Telefonnummer 0211 12345678 kannst du telefonisch deinen Unfall melden. Unser digitaler Assistent steht dir dafür <span className="underline">rund-um-die-Uhr</span> (auch an Sonn- und Feiertagen) zur Verfügung!
+          Unter der Telefonnummer +49 211 987 403 55 kannst du telefonisch deinen Unfall melden. Unser digitaler Assistent steht dir dafür <span className="underline">rund-um-die-Uhr</span> (auch an Sonn- und Feiertagen) zur Verfügung!
         </p>
         <p className="mb-4 text-sm">
           Du wünschst einen Rückruf? Dann hinterlasse uns einfach deinen Namen und deine Telefonnummer. Wir melden uns umgehend bei dir.
