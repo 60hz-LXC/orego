@@ -30,6 +30,12 @@ export default function PhonePopup({ onClose }) {
             (auch an Sonn- und Feiertagen).
           </p>
         </div>
+        <div className="mb-4 p-3 bg-gray-100 rounded">
+            <p className="text-sm font-semibold mb-2">Ein kurzer Hinweis für deinen Anruf:</p>
+            <p className="text-sm">
+              Unser digitaler Assistent nimmt dein Anliegen <span className="underline">zuverlässig</span> auf. Sprich dazu bitte <span className="underline">natürlich und</span> in vollständigen Sätzen. Auflegen, unvollständige Angaben oder nur Stichpunkte führen zu einer Verzögerung.
+            </p>
+          </div>
 
         <div className="space-y-3">
           <button
