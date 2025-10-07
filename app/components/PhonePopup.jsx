@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { LinearGradient } from "react-text-gradients";
 
 export default function PhonePopup({ onClose }) {
   const router = useRouter();
@@ -17,12 +18,12 @@ export default function PhonePopup({ onClose }) {
         <div className="mb-6 text-center">
           <p className="text-lg font-semibold mb-2">Rufen Sie uns direkt an:</p>
           <a 
-            href="tel:+49 211 930 293 02
-" 
-            className="text-2xl font-bold text-blue-600 hover:text-blue-800 transition-colors"
+            href="tel:+4921193029302" 
+            className="text-2xl font-bold hover:scale-105 transition-all duration-300"
           >
-            +49 211 930 293 02
-
+            <LinearGradient gradient={["to left", "#FF00FF ,#3B9FEE"]}>
+              +49 211 930 293 02
+            </LinearGradient>
           </a>
         </div>
 
