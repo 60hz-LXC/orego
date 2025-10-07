@@ -399,7 +399,8 @@ Insgesamt bieten wir eine professionelle und kompetente Unterstützung bei der A
                 <p>Vertr. d.d. Geschäftsführerin: Vasiliki Cirtsi-Kröger </p>
                 <p className="mt-3">Cottbusser Str. 76</p>
                 <p>40625 Düsseldorf</p>
-                <p className="mt-3">Telefon: +49 211 987 403 55</p>
+                <p className="mt-3">Telefon: +49 211 930 293 02
+</p>
                 <p>E-Mail: info@orego.group</p>
                 <p className="mt-3">StNr: 133/5858/1952</p>
                 <p>Registergericht: Amtsgericht Düsseldorf</p>

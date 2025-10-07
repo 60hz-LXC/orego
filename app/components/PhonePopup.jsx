@@ -17,10 +17,12 @@ export default function PhonePopup({ onClose }) {
         <div className="mb-6 text-center">
           <p className="text-lg font-semibold mb-2">Rufen Sie uns direkt an:</p>
           <a 
-            href="tel:+49 211 987 403 55" 
+            href="tel:+49 211 930 293 02
+" 
             className="text-2xl font-bold text-blue-600 hover:text-blue-800 transition-colors"
           >
-            +49 211 987 403 55
+            +49 211 930 293 02
+
           </a>
         </div>
 
