@@ -18,11 +18,11 @@ export default function PhonePopup({ onClose }) {
         <div className="mb-6 text-center">
           <p className="text-lg font-semibold mb-2">Rufen Sie uns direkt an:</p>
           <a 
-            href="tel:+4921193029302" 
+            href="tel:+4921192039203" 
             className="text-2xl font-bold hover:scale-105 transition-all duration-300"
           >
             <LinearGradient gradient={["to left", "#FF00FF ,#3B9FEE"]}>
-              +49 211 930 293 02
+              +49 211 9203 9203
             </LinearGradient>
           </a>
         </div>

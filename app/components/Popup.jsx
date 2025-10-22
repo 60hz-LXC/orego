@@ -42,7 +42,8 @@ export default function Popup({ onClose }) {
       <div className="bg-white p-6 rounded-lg shadow-lg w-[90%] max-w-md">
         <h2 className="text-2xl font-bold ">UNFALL MELDEN!</h2>
         <p className="mb-4 text-sm mt-2">
-          Unter der Telefonnummer +49 211 930 293 02
+          Unter der Telefonnummer +49 211 9203 9203
+
  kannst du telefonisch deinen Unfall melden. Unser digitaler Assistent steht dir dafür <span className="underline">rund-um-die-Uhr</span> (auch an Sonn- und Feiertagen) zur Verfügung!
         </p>
         <p className="mb-4 text-sm">
