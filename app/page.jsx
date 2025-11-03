@@ -1,31 +1,14 @@
 "use client"
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Image from "next/image";
 import "./globals.css";
 import { LinearGradient } from "react-text-gradients";
 import ExpandableText from "./components/ExpandableText";
 import Link from "next/link";
-import Popup from './components/Popup'; // Make sure to adjust the import path
 import PhonePopup from './components/PhonePopup';
 
 export default function Home() {
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [isPhonePopupOpen, setIsPhonePopupOpen] = useState(false);
-
-  useEffect(() => {
-    // Automatically open the popup when the component mounts
-    setTimeout(() => {
-      setIsPopupOpen(true);
-    }, 500); // Delay to make the popup feel more natural, adjust as needed
-  }, []);
-
-  const handleOpenPopup = () => {
-    setIsPopupOpen(true);
-  };
-
-  const handleClosePopup = () => {
-    setIsPopupOpen(false);
-  };
 
   const handleOpenPhonePopup = () => {
     setIsPhonePopupOpen(true);
@@ -37,7 +20,6 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center  content-start font-Comfortaa overflow-x-hidden">
-       {isPopupOpen && <Popup onClose={handleClosePopup} />}
        {isPhonePopupOpen && <PhonePopup onClose={handleClosePhonePopup} />}
       <div className="landingBG  h-fit  bg-black grid content-start p-6 pr-[1.5rem] ">
 
@@ -411,7 +393,7 @@ Insgesamt bieten wir eine professionelle und kompetente Unterstützung bei der A
         </div>
         <button
           className="fixed bottom-4 right-4 bg-blue-500 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition"
-          onClick={handleOpenPopup}
+          onClick={handleOpenPhonePopup}
         >
           UNFALL MELDEN!
         </button>
