@@ -1,5 +1,6 @@
 import "./globals.css";
 import NavGate from "./components/NavGate";
+import PageBoot from "./components/PageBoot";
 
 export const metadata = {
   title: "OREGO — Unfallschadenabwicklung",
@@ -11,8 +12,13 @@ export default function Layout({ children }) {
   return (
     <html lang="de">
       <body>
-        <NavGate />
-        {children}
+        <noscript>
+          <style>{`.boot-content{visibility:visible}.boot-screen{display:none}`}</style>
+        </noscript>
+        <PageBoot>
+          <NavGate />
+          {children}
+        </PageBoot>
       </body>
     </html>
   );

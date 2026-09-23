@@ -88,7 +88,7 @@ export default function Form() {
         <>
           <Reveal>
           <p className="text-[11px] uppercase tracking-[0.22em] text-black/40">Schaden melden</p>
-          <h1 className="mt-2 font-montBlack text-4xl uppercase leading-none tracking-tight">Schadensformular</h1>
+          <h1 className="form-title">Schadensformular</h1>
           <p className="mt-4 max-w-lg text-sm leading-relaxed text-black/55">
             Ein paar Angaben reichen. Du erreichst uns auch rund um die Uhr unter{" "}
             <a href="tel:+4921192039203" className="text-[#141418] underline decoration-[#3b9fee] underline-offset-4">
