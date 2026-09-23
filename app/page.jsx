@@ -277,19 +277,19 @@ export default function Home() {
                 <div aria-hidden="true" className="absolute inset-y-0 left-0 w-1.5 bg-gradient-to-b from-[#3b9fee] to-[#e879f9]" />
                 <div className="flex flex-col gap-6 pl-3 sm:pl-4 lg:flex-row lg:items-center lg:justify-between">
                   <div className="max-w-2xl">
-                    <img src="/vicky-logo-blue.svg" alt="Vicky" className="h-8 w-auto" />
-                    <h3 className="mt-4 font-montBlack text-xl uppercase tracking-tight text-neutral-900 sm:text-2xl">
-                      Sie brauchen einen Anwalt?
+                    <img src="/jurasolutions-logo.svg" alt="JuraSolutions" className="h-12 w-auto" />
+                    <h3 className="mt-4 font-montBlack text-lg uppercase leading-tight tracking-tight text-neutral-900 sm:text-2xl">
+                      Kostenlose Ersteinschätzung durch einen Rechtsanwalt
                     </h3>
                     <p className="mt-3 text-sm leading-relaxed text-neutral-600">
-                      VickyChat beantwortet rechtliche Fragen rund um Autounfälle sofort — auch nachts und am Wochenende.
-                      Die Software schlägt echte Anwälte vor und leitet die relevanten Fallinformationen weiter, damit
-                      Sie direkt professionelle Hilfe bekommen.
+                      Unsere Partneranwälte der JuraSolutions RA GmbH unterstützen dich kompetent bei der Durchsetzung
+                      deiner Ansprüche nach einem Unfall. Kontaktiere die JuraSolutions RA GmbH am besten jetzt gleich
+                      für eine kostenlose und unverbindliche Ersteinschätzung deines Falls!
                     </p>
                   </div>
-                  <Link href="https://vickychat.pro" className="shrink-0">
-                    <span className="btn-cta btn-cta-dark inline-flex">Zu Vicky</span>
-                  </Link>
+                  <a href="https://jura.solutions" target="_blank" rel="noreferrer" className="shrink-0">
+                    <span className="btn-cta btn-cta-dark inline-flex">Jetzt kontaktieren</span>
+                  </a>
                 </div>
               </article>
             </Reveal>
