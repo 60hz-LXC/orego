@@ -10,21 +10,20 @@ const Datenschutz = () => {
           <p className="text-[11px] uppercase tracking-[0.22em] text-black/40">Rechtliches</p>
           <h1 className="mt-2 font-montBlack text-4xl uppercase tracking-tight">Datenschutz</h1>
         </Reveal>
-        <Reveal delay={90}>
-        <div className="page-card mt-8">
+        <div className="page-card legal-card mt-8">
 
-      <h2 className="text-2xl font-semibold my-4">
+      <h2 className="legal-section">
         Datenschutzerklärung im Sinne der Art. 13 und 14 DSGVO
         (Informationspflichten)
       </h2>
 
       
 
-      <h3 className="text-xl font-semibold mt-4 mb-2">
+      <h3 className="legal-sub">
         2. Erhebung und Speicherung personenbezogener Daten sowie Art und Zweck
         von deren Verwendung
       </h3>
-      <h4 className="text-lg font-semibold mt-3 mb-1">
+      <h4 className="legal-sub">
         a) beim Besuch der der Website
       </h4>
       <p className="mb-4">
@@ -69,7 +68,7 @@ const Datenschutz = () => {
         in dieser Datenschutzerklärung.
       </p>
 
-      <h4 className="text-lg font-semibold mt-3 mb-1">
+      <h4 className="legal-sub">
         b) Bei Nutzung unseres Kontaktformulars
       </h4>
       <p className="mb-4">
@@ -90,7 +89,7 @@ const Datenschutz = () => {
         Anfrage automatisch gelöscht.
       </p>
 
-      <h2 className="text-2xl font-semibold my-4">3. Weitergabe von Daten</h2>
+      <h2 className="legal-section">3. Weitergabe von Daten</h2>
       <p className="mb-4">
         Eine Übermittlung Ihrer persönlichen Daten an Dritte zu anderen als den
         im Folgenden aufgeführten Zwecken findet nicht statt.
@@ -114,7 +113,7 @@ const Datenschutz = () => {
         erforderlich ist.
       </p>
 
-      <h2 className="text-2xl font-semibold my-4">4. Cookies</h2>
+      <h2 className="legal-section">4. Cookies</h2>
       <p className="mb-4">
         Zur Optimierung unseres Internet-Auftritts setzen wir Cookies ein.
         Hierbei handelt es sich um kleine Dateien, die Ihr Browser automatisch
@@ -208,7 +207,7 @@ const Datenschutz = () => {
         manuell zu löschen.
       </p>
 
-      <h2 className="text-2xl font-semibold my-4">5. Betroffenenrechte</h2>
+      <h2 className="legal-section">5. Betroffenenrechte</h2>
       <p className="mb-4">
         Sie haben das Recht:
         <br />
@@ -257,7 +256,7 @@ const Datenschutz = () => {
         Aufenthaltsortes, Ihres Arbeitsplatzes oder unseres Firmensitzes.
       </p>
 
-      <h2 className="text-2xl font-semibold my-4">6. Widerspruchsrecht</h2>
+      <h2 className="legal-section">6. Widerspruchsrecht</h2>
       <p className="mb-4">
         Sofern Ihre personenbezogenen Daten auf Grundlage von berechtigten
         Interessen gemäß Art. 6 Abs. 1 S. 1 lit. f DS-GVO verarbeitet werden,
@@ -271,7 +270,7 @@ const Datenschutz = () => {
         an: info@orego.group
       </p>
 
-      <h2 className="text-2xl font-semibold my-4">7. Datensicherheit</h2>
+      <h2 className="legal-section">7. Datensicherheit</h2>
       <p className="mb-4">
         Wir verwenden innerhalb des Website-Besuchs das verbreitete
         SSL-Verfahren (Secure Socket Layer) in Verbindung mit der jeweils
@@ -292,7 +291,7 @@ const Datenschutz = () => {
         fortlaufend verbessert.
       </p>
 
-      <h2 className="text-2xl font-semibold my-4">
+      <h2 className="legal-section">
         8. Aktualität und Änderung dieser Datenschutzerklärung
       </h2>
       <p className="mb-4">
@@ -304,9 +303,8 @@ const Datenschutz = () => {
         Website unter „xxx“ von Ihnen abgerufen und ausgedruckt werden.
       </p>
 
-        <p className="mt-8 text-sm text-black/40">2026 – OREGO UG (haftungsbeschränkt) ©</p>
         </div>
-        </Reveal>
+        <p className="mt-8 text-sm text-black/40">2026 – OREGO UG (haftungsbeschränkt) ©</p>
       </div>
     </div>
   );

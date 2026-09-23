@@ -1,12 +1,19 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { useRouter } from "next/navigation";
 
 export default function PhonePopup({ onClose }) {
   const router = useRouter();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return undefined;
     const previous = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
@@ -19,14 +26,16 @@ export default function PhonePopup({ onClose }) {
       document.body.style.overflow = previous;
       window.removeEventListener("keydown", onKey);
     };
-  }, [onClose]);
+  }, [mounted, onClose]);
+
+  if (!mounted) return null;
 
   const handleFormRedirect = () => {
     onClose();
     router.push("/form");
   };
 
-  return (
+  return createPortal(
     <div
       className="fixed inset-0 z-[100] flex items-end justify-center bg-black/65 p-4 backdrop-blur-sm sm:items-center"
       onClick={onClose}
@@ -81,6 +90,7 @@ export default function PhonePopup({ onClose }) {
           </button>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
