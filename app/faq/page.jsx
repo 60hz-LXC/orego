@@ -1,7 +1,6 @@
 "use client"
 import React, { useState } from "react";
 import "../globals.css";
-import Link from "next/link";
 
 const FAQ = () => {
   const [openFAQ, setOpenFAQ] = useState(null);
@@ -126,46 +125,46 @@ const FAQ = () => {
   ];
 
   return (
-    <div className="landingBG mx-auto px-4 lg:px-[20%] py-8 text-white font-Comfortaa h-screen">
-      <div className="flex flex-row justify-evenly mb-[5rem]">
-        <Link href="/">
-          <img src="./oregoLogo.svg" alt="" className="h-[4rem] lg:h-[5rem]" />
-        </Link>
+    <div className="legal min-h-screen font-Comfortaa">
+      <div className="mx-auto max-w-3xl px-5 pb-24 pt-28">
+        <p className="text-[11px] uppercase tracking-[0.22em] text-black/40">Hilfe</p>
+        <h1 className="mt-2 font-montBlack text-4xl uppercase tracking-tight">FAQ</h1>
+        <p className="mt-4 max-w-lg text-sm leading-relaxed text-black/55">
+          Kurze Antworten auf die Fragen, die nach einem Unfall am häufigsten kommen.
+        </p>
 
-        <div className="flex flex-row justify-between lg:justify-around content-evenly">
-          <a href="/impressum">
-            <button className="text-white px-4 py-2 max-lg:hidden rounded-xl hover:bg-[#00000090] s transition-all cursor-pointer duration-1000 ease-in-out">
-              IMPRESSUM
-            </button>
-          </a>
-          <a href="/datenschutz">
-            <button className="text-white px-4 py-2 max-lg:hidden rounded-xl hover:bg-[#00000090] s transition-all cursor-pointer duration-1000 ease-in-out">
-              DATENSCHUTZ
-            </button>
-          </a>
-          <a href="faq">
-            <button className="text-white px-4 py-2 max-lg:hidden rounded-xl hover:bg-[#00000090] s transition-all cursor-pointer duration-1000 ease-in-out">
-              FAQ
-            </button>
-          </a>
+        <div className="page-card mt-8 !p-0">
+          {faqs.map((faq, index) => {
+            const isOpen = openFAQ === index;
+            return (
+              <div key={faq.question} className="border-b border-black/[0.06] last:border-b-0">
+                <button
+                  type="button"
+                  className="flex w-full items-center justify-between gap-6 px-6 py-5 text-left text-[0.95rem] sm:px-10"
+                  aria-expanded={isOpen}
+                  onClick={() => toggleFAQ(index)}
+                >
+                  <span>{faq.question}</span>
+                  <span
+                    className={`grid h-7 w-7 shrink-0 place-items-center rounded-full border border-black/10 text-lg leading-none text-black/50 transition duration-300 ${
+                      isOpen ? "rotate-45 bg-[#141418] text-white" : ""
+                    }`}
+                  >
+                    +
+                  </span>
+                </button>
+                <div className={`grid transition-all duration-300 ease-out ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
+                  <div className="overflow-hidden">
+                    <p className="px-6 pb-5 text-sm leading-relaxed sm:px-10">{faq.answer}</p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
+
+        <p className="mt-8 text-sm text-black/40">2026 – OREGO UG (haftungsbeschränkt) ©</p>
       </div>
-
-      <h1 className="text-[3rem] font-bold mb-6">FAQ</h1>
-
-      {faqs.map((faq, index) => (
-        <div key={index}>
-          <h2
-            className="text-xl font-semibold my-4 cursor-pointer mt-2"
-            onClick={() => toggleFAQ(index)}
-          >
-            {faq.question}
-          </h2>
-          {openFAQ === index && <p className="mb-8">{faq.answer}</p>}
-        </div>
-      ))}
-
-      <p className="text-base mt-8">2023 – OREGO UG (haftungsbeschränkt) ©</p>
     </div>
   );
 };

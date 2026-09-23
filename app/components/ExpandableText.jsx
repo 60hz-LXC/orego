@@ -22,7 +22,7 @@ const ExpandableText = ({ children, maxLength = 900, style  }) => {
   };
 
   return (
-    <div className="text-third text-[.8rem] mx-auto mt-2 relative z-0"   style={{ ...style }}  >
+    <div className="relative z-0 mx-auto mt-3 text-sm leading-relaxed text-neutral-600" style={{ ...style }}>
       <div
         className={`overflow-hidden transition-all duration-300 z-0 ease-in-out ${
           isExpanded ? 'max-h-full' : 'max-h-[10em]'
@@ -44,7 +44,7 @@ const ExpandableText = ({ children, maxLength = 900, style  }) => {
       {needsTruncation && (
         <button
           onClick={() => setIsExpanded(!isExpanded)}
-          className="text-third font-black cursor-pointer bg-white mx-auto mt-4 flex items-center hover:bg-slate-200 p-4 rounded-2xl transition duration-300 ease-in-out relative z-0"
+          className="relative z-0 mx-auto mt-4 flex cursor-pointer items-center rounded-full border border-black/10 bg-white px-4 py-2 text-sm transition duration-300 ease-out hover:-translate-y-0.5 hover:shadow-md"
         >
           {isExpanded ? (
             <>

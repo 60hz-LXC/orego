@@ -1,34 +1,13 @@
 import React from "react";
 import "../globals.css";
-import Link from "next/link";
 
 const Datenschutz = () => {
   return (
-    <div className=" landingBG mx-auto px-4 w-[100%] lg:px-[20%] py-8 text-white  font-Comfortaa">
-      <div className="flex flex-row justify-evenly mb-[5rem]">
-        <Link href="/">
-          <img src="./oregoLogo.svg" alt="" className="h-[4rem] lg:h-[5rem]" />
-        </Link>
-
-        <div className="flex flex-row  justify-between lg:justify-around content-evenly">
-          <a href="/impressum">
-            <button className="text-white px-4 py-2 max-lg:hidden rounded-xl   hover:bg-[#00000090] s transition-all cursor-pointer duration-1000 ease-in-out">
-              IMPRESSUM
-            </button>
-          </a>
-          <a href="/datenschutz">
-            <button className="text-white px-4 py-2 max-lg:hidden rounded-xl   hover:bg-[#00000090] s transition-all cursor-pointer duration-1000 ease-in-out">
-              DATENSCHUTZ
-            </button>
-          </a>
-          <a href="faq">
-            <button className="text-white px-4 py-2 max-lg:hidden rounded-xl   hover:bg-[#00000090] s transition-all cursor-pointer duration-1000 ease-in-out">
-              FAQ
-            </button>
-          </a>
-        </div>
-      </div>
-      <h1 className="text-3xl font-bold mb-6 ">DATENSCHUTZ</h1>
+    <div className="legal min-h-screen px-5 pb-24 pt-28 font-Comfortaa">
+      <div className="mx-auto max-w-3xl">
+        <p className="text-[11px] uppercase tracking-[0.22em] text-black/40">Rechtliches</p>
+        <h1 className="mt-2 font-montBlack text-4xl uppercase tracking-tight">Datenschutz</h1>
+        <div className="page-card mt-8">
 
       <h2 className="text-2xl font-semibold my-4">
         Datenschutzerklärung im Sinne der Art. 13 und 14 DSGVO
@@ -321,7 +300,9 @@ const Datenschutz = () => {
         Website unter „xxx“ von Ihnen abgerufen und ausgedruckt werden.
       </p>
 
-      <p className="text-base mt-8">2023 – OREGO UG (haftungsbeschränkt) ©</p>
+        <p className="mt-8 text-sm text-black/40">2026 – OREGO UG (haftungsbeschränkt) ©</p>
+        </div>
+      </div>
     </div>
   );
 };
