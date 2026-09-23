@@ -1,12 +1,16 @@
 import React from "react";
 import "../globals.css";
+import Reveal from "../components/Reveal";
 
 const Datenschutz = () => {
   return (
     <div className="legal min-h-screen px-5 pb-24 pt-28 font-Comfortaa">
       <div className="mx-auto max-w-3xl">
-        <p className="text-[11px] uppercase tracking-[0.22em] text-black/40">Rechtliches</p>
-        <h1 className="mt-2 font-montBlack text-4xl uppercase tracking-tight">Datenschutz</h1>
+        <Reveal>
+          <p className="text-[11px] uppercase tracking-[0.22em] text-black/40">Rechtliches</p>
+          <h1 className="mt-2 font-montBlack text-4xl uppercase tracking-tight">Datenschutz</h1>
+        </Reveal>
+        <Reveal delay={90}>
         <div className="page-card mt-8">
 
       <h2 className="text-2xl font-semibold my-4">
@@ -302,6 +306,7 @@ const Datenschutz = () => {
 
         <p className="mt-8 text-sm text-black/40">2026 – OREGO UG (haftungsbeschränkt) ©</p>
         </div>
+        </Reveal>
       </div>
     </div>
   );

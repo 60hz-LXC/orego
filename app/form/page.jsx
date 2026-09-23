@@ -1,6 +1,7 @@
 "use client"
 import { useState } from "react";
 import "../globals.css";
+import Reveal from "../components/Reveal";
 
 
 export default function Form() {
@@ -73,6 +74,7 @@ export default function Form() {
     <div className="min-h-screen bg-[#f3f4f6] font-Comfortaa text-[#141418]">
       <div className="mx-auto max-w-2xl px-5 pb-24 pt-28">
       {isSubmitted ? (
+        <Reveal>
         <div className="rounded-3xl bg-white px-6 py-14 text-center shadow-[0_20px_60px_rgba(16,24,40,0.06)] sm:px-10">
           <p className="text-[11px] uppercase tracking-[0.22em] text-black/40">Orego</p>
           <h1 className="mt-3 font-montBlack text-4xl uppercase tracking-tight">Vielen Dank</h1>
@@ -81,8 +83,10 @@ export default function Form() {
           </p>
           <a href="/" className="btn-cta btn-cta-dark mt-8">Zur Startseite</a>
         </div>
+        </Reveal>
       ) : (
         <>
+          <Reveal>
           <p className="text-[11px] uppercase tracking-[0.22em] text-black/40">Schaden melden</p>
           <h1 className="mt-2 font-montBlack text-4xl uppercase leading-none tracking-tight">Schadensformular</h1>
           <p className="mt-4 max-w-lg text-sm leading-relaxed text-black/55">
@@ -92,6 +96,8 @@ export default function Form() {
             </a>
             .
           </p>
+          </Reveal>
+          <Reveal delay={90}>
           <form onSubmit={handleSubmit} className="mt-8 space-y-5 rounded-3xl bg-white p-6 shadow-[0_20px_60px_rgba(16,24,40,0.06)] sm:p-8">
             <p className="text-[11px] uppercase tracking-[0.18em] text-black/40">Deine Daten</p>
             <div>
@@ -370,6 +376,7 @@ export default function Form() {
               Formular senden
             </button>
           </form>
+          </Reveal>
         </>
       )}
       </div>

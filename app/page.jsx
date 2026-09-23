@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import "./globals.css";
 import ExpandableText from "./components/ExpandableText";
@@ -146,14 +146,6 @@ const services = [
 
 export default function Home() {
   const [isPhonePopupOpen, setIsPhonePopupOpen] = useState(false);
-  const [showFloat, setShowFloat] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setShowFloat(window.scrollY > window.innerHeight * 0.72);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   return (
     <main className="overflow-x-hidden font-Comfortaa">
@@ -195,7 +187,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="rise d5 grid gap-3 pb-8 lg:grid-cols-3 lg:pb-10">
+          <Reveal delay={80} className="grid gap-3 pb-8 lg:grid-cols-3 lg:pb-10">
             {features.map((feature) => (
               <article
                 key={feature.title}
@@ -206,7 +198,7 @@ export default function Home() {
                 <p className="mt-1.5 text-[13px] leading-relaxed tracking-normal text-white/60">{feature.text}</p>
               </article>
             ))}
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -460,7 +452,7 @@ export default function Home() {
       </section>
 
       <footer className="bg-[#07080d] text-white">
-        <div className="mx-auto grid max-w-6xl gap-10 px-5 py-12 sm:px-8 md:grid-cols-[1.3fr_1fr_1fr]">
+        <Reveal className="mx-auto grid max-w-6xl gap-10 px-5 py-12 sm:px-8 md:grid-cols-[1.3fr_1fr_1fr]">
           <div>
             <img src="/oregoLogo.svg" alt="Orego" className="h-10 w-auto" />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/65">
@@ -508,17 +500,11 @@ export default function Home() {
               <Link href="/form" className="transition hover:text-white">Schaden melden</Link>
             </div>
           </div>
-        </div>
+        </Reveal>
         <div className="border-t border-white/10 px-5 py-4 text-center text-xs text-white/40">
           © {new Date().getFullYear()} Orego UG. All rights reserved.
         </div>
       </footer>
-
-      {showFloat && !isPhonePopupOpen && (
-        <SignalButton className="btn-float fixed bottom-5 right-5 z-40" onClick={() => setIsPhonePopupOpen(true)}>
-          Unfall melden
-        </SignalButton>
-      )}
     </main>
   );
 }

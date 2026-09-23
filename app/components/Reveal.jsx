@@ -1,42 +1,19 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
+
+const ease = [0.22, 1, 0.36, 1];
 
 export default function Reveal({ children, className = "", delay = 0 }) {
-  const ref = useRef(null);
-  const [shown, setShown] = useState(false);
-
-  useEffect(() => {
-    const node = ref.current;
-    if (!node) return;
-
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduce) {
-      setShown(true);
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setShown(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.16, rootMargin: "0px 0px -8% 0px" }
-    );
-
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <div
-      ref={ref}
-      style={{ transitionDelay: `${delay}ms` }}
-      className={`reveal w-full ${shown ? "reveal-in" : ""} ${className}`}
+    <motion.div
+      className={`motion-reveal w-full ${className}`}
+      initial={{ opacity: 0, y: 32 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2, margin: "0px 0px -8% 0px" }}
+      transition={{ duration: 0.8, delay: delay / 1000, ease }}
     >
       {children}
-    </div>
+    </motion.div>
   );
 }

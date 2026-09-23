@@ -161,13 +161,7 @@ body {
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
 }
 
-.btn-float {
-  padding: 0.4rem 0.4rem 0.4rem 0.95rem;
-  font-size: 0.84rem;
-}
-
 .btn-signal {
-  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
@@ -211,11 +205,6 @@ body {
 
 .btn-signal:active {
   transform: translateY(0) scale(0.99);
-}
-
-.btn-signal.btn-float {
-  padding: 0.32rem 0.32rem 0.32rem 0.95rem;
-  font-size: 0.84rem;
 }
 
 .hero-gem {
@@ -396,6 +385,21 @@ body {
   }
 }
 
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.page-in {
+  animation: page-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
 @keyframes rise {
   from {
     opacity: 0;
@@ -419,13 +423,4 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .rise,
-  .reveal,
-  .hero-media,
-  .pulse-dot {
-    animation: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-  }
 }

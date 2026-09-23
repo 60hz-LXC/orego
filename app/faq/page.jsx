@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from "react";
 import "../globals.css";
+import Reveal from "../components/Reveal";
 
 const FAQ = () => {
   const [openFAQ, setOpenFAQ] = useState(null);
@@ -127,17 +128,20 @@ const FAQ = () => {
   return (
     <div className="legal min-h-screen font-Comfortaa">
       <div className="mx-auto max-w-3xl px-5 pb-24 pt-28">
-        <p className="text-[11px] uppercase tracking-[0.22em] text-black/40">Hilfe</p>
-        <h1 className="mt-2 font-montBlack text-4xl uppercase tracking-tight">FAQ</h1>
-        <p className="mt-4 max-w-lg text-sm leading-relaxed text-black/55">
-          Kurze Antworten auf die Fragen, die nach einem Unfall am häufigsten kommen.
-        </p>
+        <Reveal>
+          <p className="text-[11px] uppercase tracking-[0.22em] text-black/40">Hilfe</p>
+          <h1 className="mt-2 font-montBlack text-4xl uppercase tracking-tight">FAQ</h1>
+          <p className="mt-4 max-w-lg text-sm leading-relaxed text-black/55">
+            Kurze Antworten auf die Fragen, die nach einem Unfall am häufigsten kommen.
+          </p>
+        </Reveal>
 
         <div className="page-card mt-8 !p-0">
           {faqs.map((faq, index) => {
             const isOpen = openFAQ === index;
             return (
-              <div key={faq.question} className="border-b border-black/[0.06] last:border-b-0">
+              <Reveal key={faq.question} delay={Math.min(index, 5) * 45}>
+              <div className="border-b border-black/[0.06] last:border-b-0">
                 <button
                   type="button"
                   className="flex w-full items-center justify-between gap-6 px-6 py-5 text-left text-[0.95rem] sm:px-10"
@@ -159,11 +163,14 @@ const FAQ = () => {
                   </div>
                 </div>
               </div>
+              </Reveal>
             );
           })}
         </div>
 
-        <p className="mt-8 text-sm text-black/40">2026 – OREGO UG (haftungsbeschränkt) ©</p>
+        <Reveal>
+          <p className="mt-8 text-sm text-black/40">2026 – OREGO UG (haftungsbeschränkt) ©</p>
+        </Reveal>
       </div>
     </div>
   );

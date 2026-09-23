@@ -12,6 +12,7 @@
     "@vercel/analytics": "^1.5.0",
     "axios": "^1.6.2",
     "formidable": "^3.5.1",
+    "framer-motion": "^13.4.1",
     "hamburger-react": "^2.5.0",
     "ldrs": "^1.0.1",
     "next": "14.0.3",
