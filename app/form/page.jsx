@@ -30,6 +30,7 @@ export default function Form() {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [sendError, setSendError] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -54,6 +55,8 @@ export default function Form() {
       formData.append('polizeibericht', formValues.polizeibericht);
     }
 
+    setSendError(false);
+
     try {
       const response = await fetch('/api/send-form', {
         method: 'POST',
@@ -63,10 +66,10 @@ export default function Form() {
       if (response.ok) {
         setIsSubmitted(true);
       } else {
-        console.error('Error sending form data');
+        setSendError(true);
       }
     } catch (error) {
-      console.error('Error sending form data', error);
+      setSendError(true);
     }
   };
 
@@ -372,6 +375,11 @@ export default function Form() {
               </div>
             </div>
 
+            {sendError && (
+              <p className="text-sm text-red-600">
+                Die Meldung konnte nicht gesendet werden. Bitte versuch es noch einmal oder ruf uns unter +49 211 9203 9203 an.
+              </p>
+            )}
             <button type="submit" className="btn-cta btn-cta-dark w-full">
               Formular senden
             </button>
